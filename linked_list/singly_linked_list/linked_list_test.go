@@ -1,4 +1,4 @@
-package go_data_structures
+package singly_linked_list
 
 import (
 	"testing"
