@@ -30,3 +30,7 @@ func (l *LinkedStack) Top() int {
 func (l *LinkedStack) Len() int {
 	return l.size
 }
+
+func (l *LinkedStack) IsEmpty() bool {
+	return l.size == 0
+}

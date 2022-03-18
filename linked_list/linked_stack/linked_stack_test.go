@@ -55,3 +55,15 @@ func TestLen(t *testing.T) {
 		t.Errorf("want %d but got %d", want, got)
 	}
 }
+
+func TestIsEmpty(t *testing.T) {
+	t.Run("Testing with stack empty", func(t *testing.T) {
+		stack := LinkedStack{}
+		stack.size = 0
+		got := stack.IsEmpty()
+
+		if got != true {
+			t.Errorf("got %t but want %t", got, true)
+		}
+	})
+}
