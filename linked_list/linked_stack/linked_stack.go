@@ -22,3 +22,7 @@ func (l *LinkedStack) Pop() int {
 	l.size--
 	return popValue
 }
+
+func (l *LinkedStack) Top() int {
+	return l.head.element
+}
