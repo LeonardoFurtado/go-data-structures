@@ -11,16 +11,15 @@ type LinkedStack struct {
 }
 
 func (l *LinkedStack) Push(value int) {
-	newNode := Node{value, l.head}
-	l.head = &newNode
+	l.head = &Node{value, l.head}
 	l.size++
 }
 
 func (l *LinkedStack) Pop() int {
-	popValue := l.head.element
+	answer := l.head.element
 	l.head = l.head.next
 	l.size--
-	return popValue
+	return answer
 }
 
 func (l *LinkedStack) Top() int {
