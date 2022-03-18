@@ -26,3 +26,7 @@ func (l *LinkedStack) Pop() int {
 func (l *LinkedStack) Top() int {
 	return l.head.element
 }
+
+func (l *LinkedStack) Len() int {
+	return l.size
+}

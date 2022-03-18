@@ -42,3 +42,16 @@ func TestTop(t *testing.T) {
 		t.Errorf("want %d but got %d", want, got)
 	}
 }
+
+func TestLen(t *testing.T) {
+	n3 := Node{10, nil}
+	n2 := Node{20, &n3}
+	n1 := Node{30, &n2}
+	stack := LinkedStack{&n1, 3}
+	got := stack.Len()
+	want := 3
+
+	if got != want {
+		t.Errorf("want %d but got %d", want, got)
+	}
+}
