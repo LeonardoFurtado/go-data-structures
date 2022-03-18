@@ -15,3 +15,10 @@ func (l *LinkedStack) Push(value int) {
 	l.head = &newNode
 	l.size++
 }
+
+func (l *LinkedStack) Pop() int {
+	popValue := l.head.element
+	l.head = l.head.next
+	l.size--
+	return popValue
+}

@@ -13,3 +13,19 @@ func TestPush(t *testing.T) {
 		t.Errorf("Value was not inserted on top.")
 	}
 }
+
+func TestPop(t *testing.T) {
+	n3 := Node{10, nil}
+	n2 := Node{20, &n3}
+	n1 := Node{30, &n2}
+	stack := LinkedStack{&n1, 3}
+	got := stack.Pop()
+	want := 30
+	if want != got {
+		t.Errorf("Want %d but got %d", want, got)
+	}
+
+	if stack.size != 2 {
+		t.Errorf("The stack size was not decreased")
+	}
+}
