@@ -1,5 +1,9 @@
 package linked_stack
 
+/*
+LIFO queue implementation using a singly linked list for storage.
+*/
+
 type Node struct {
 	element int
 	next    *Node
