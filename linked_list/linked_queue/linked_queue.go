@@ -1,5 +1,7 @@
 package linked_queue
 
+import "errors"
+
 /*
 FIFO queue implementation using a singly linked list for storage.
 */
@@ -27,6 +29,20 @@ func (l *LinkedQueue) Enqueue(element int) {
 	l.size++
 }
 
+//Dequeue remove and return the ﬁrst element of the queue (i.e., FIFO).
+func (l *LinkedQueue) Dequeue() (int, error) {
+	if l.IsEmpty() {
+		return 0, errors.New("queue is empty")
+	}
+	answer := l.head.element
+	l.head = l.head.next
+	l.size -= 1
+	if l.IsEmpty() {
+		l.tail = nil
+	}
+	return answer, nil
+}
+
 //IsEmpty return true if the queue is empty.
 func (l *LinkedQueue) IsEmpty() bool {
 	return l.size == 0
@@ -35,4 +51,12 @@ func (l *LinkedQueue) IsEmpty() bool {
 //Len return the size of the queue
 func (l *LinkedQueue) Len() int {
 	return l.size
+}
+
+//First return the element of the head node
+func (l *LinkedQueue) First() (int, error) {
+	if l.IsEmpty() {
+		return 0, errors.New("queue is empty")
+	}
+	return l.head.element, nil
 }

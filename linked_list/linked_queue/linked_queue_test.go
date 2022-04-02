@@ -13,6 +13,19 @@ func TestEnqueue(t *testing.T) {
 	}
 }
 
+func TestDequeue(t *testing.T) {
+	n2 := Node{20, nil}
+	n1 := Node{10, &n2}
+	queue := LinkedQueue{head: &n1, size: 2}
+	got, _ := queue.Dequeue()
+	want := 10
+
+	if got != want {
+		t.Errorf("got %d but want %d", got, want)
+	}
+
+}
+
 func TestIsEmpty(t *testing.T) {
 	queue := LinkedQueue{}
 	got := queue.IsEmpty()
@@ -25,6 +38,16 @@ func TestLen(t *testing.T) {
 	queue := LinkedQueue{}
 	got := queue.Len()
 	want := 0
+	if got != want {
+		t.Errorf("got %d but want %d", got, want)
+	}
+}
+
+func TestFirst(t *testing.T) {
+	node := Node{10, nil}
+	queue := LinkedQueue{head: &node, size: 1}
+	got, _ := queue.First()
+	want := 10
 	if got != want {
 		t.Errorf("got %d but want %d", got, want)
 	}
