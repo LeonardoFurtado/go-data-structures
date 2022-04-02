@@ -31,3 +31,8 @@ func (l *LinkedQueue) Enqueue(element int) {
 func (l *LinkedQueue) IsEmpty() bool {
 	return l.size == 0
 }
+
+//Len return the size of the queue
+func (l *LinkedQueue) Len() int {
+	return l.size
+}

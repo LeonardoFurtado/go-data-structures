@@ -17,6 +17,15 @@ func TestIsEmpty(t *testing.T) {
 	queue := LinkedQueue{}
 	got := queue.IsEmpty()
 	if got != true {
-		t.Errorf("got false but want true")
+		t.Errorf("got %t but want true", got)
+	}
+}
+
+func TestLen(t *testing.T) {
+	queue := LinkedQueue{}
+	got := queue.Len()
+	want := 0
+	if got != want {
+		t.Errorf("got %d but want %d", got, want)
 	}
 }
