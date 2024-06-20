@@ -5,7 +5,7 @@ func BinarySearch(arr []int, target int, min int, max int) int{
     if min > max{
         return -1
     }
-    middle := (min + max) / 2
+    middle := min + (max - min) / 2
     if arr[middle] == target {
         return middle
     } else if arr[middle] > target{
